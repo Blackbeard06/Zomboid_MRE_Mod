@@ -1,0 +1,124 @@
+module MREFood{
+
+/** Items **/
+	item MRE
+	{
+        HungerChange = -40,
+        Weight = 0.5,
+        Type = Food,
+        UnhappyChange = -10,
+        ThirstChange = 5,
+        DisplayName = MRE,
+        Icon = MREBrown,
+        Carbohydrates = 170,
+        Proteins = 40,
+        Lipids = 60,
+        Calories = 1260,
+        Packaged = TRUE,
+		FoodType    =   NoExplicit,
+        FatigueChange = -1,
+        StressChange =  -1,
+	}
+
+item MREbox
+	{
+		Weight			=	2,
+		Icon			=	MREbox,
+		DisplayName		=	Box of MREs,
+	}
+
+    item MREpalletsmall
+    {
+        Weight    		= 20.0,
+        Type   			= Normal,
+        DisplayName     = Small Pallet of MREs,
+        icon 			= MREpalletsmall,
+	ResizeWorldIcon 	= 2.0,
+    }
+
+item MREpalletmedium
+    {
+        Weight    		= 20.0,
+        Type   			= Normal,
+        DisplayName     = Medium Pallet of MREs,
+        icon 			= MREpalletmedium,
+	ResizeWorldIcon 	= 2.0,
+    }
+
+item MREpalletlarge
+    {
+        Weight    		= 20.0,
+        Type   			= Normal,
+        DisplayName     = Large Pallet of MREs,
+        icon 			= MREpalletlarge,
+	ResizeWorldIcon 	= 2.0,
+    }
+
+
+/** Recipes **/
+
+recipe Unbox MREs
+    	{
+	MREbox,
+	Result:MRE=12,
+	Time:20.0,
+	Category:Cooking,
+    	}
+
+recipe Boxup MREs
+    	{
+	MRE=12,
+	Result:MREbox=1,
+	Time:20.0,
+	Category:Cooking,
+    	}
+
+recipe Unpack Small Pallet of MREs
+    {
+    	MREpalletsmall,
+    	Result:MREbox=4,
+    	Time:20.0,
+    	Category:Cooking,
+    }
+
+recipe Pack Small Pallet of MREs
+    {
+    	MREbox=4,
+    	Result:MREpalletsmall,
+    	Time:20.0,
+    	Category:Cooking,
+    }
+
+recipe Unpack Medium Pallet of MREs
+    {
+    	MREpalletmedium,
+    	Result:MREbox=8,
+    	Time:20.0,
+    	Category:Cooking,
+    }
+
+recipe Pack Medium Pallet of MREs
+    {
+    	MREbox=8,
+    	Result:MREpalletmedium,
+    	Time:20.0,
+    	Category:Cooking,
+    }
+
+recipe Unpack Large Pallet of MREs
+    {
+    	MREpalletlarge,
+    	Result:MREbox=12,
+    	Time:20.0,
+    	Category:Cooking,
+    }
+
+recipe Pack Large Pallet of MREs
+    {
+    	MREbox=12,
+    	Result:MREpalletlarge,
+    	Time:20.0,
+    	Category:Cooking,
+    }
+
+}
